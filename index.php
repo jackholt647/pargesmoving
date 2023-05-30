@@ -18,6 +18,7 @@
     $strJsonFileContents = file_get_contents("variables.json");
     $array = json_decode($strJsonFileContents, true);
     $phone = $array["phone"];
+    $email = $array["email"];
     $city = $array["city"];
     $state = $array["state"];
 ?>
@@ -55,7 +56,7 @@
         <h2>Contact Us</h2>
         <p>Interested in our services or have a question? Don't hesitate to reach out!</p>
         <p>Phone: <?php echo $phone; ?></p>
-        <p>Email: info@steveandstevepestcontrol.com</p>
+        <p>Email: <?php echo $email; ?></p>
         <p>We look forward to keeping your home and business pest-free!</p>
       </div>
     </div>
