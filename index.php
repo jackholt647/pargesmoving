@@ -14,6 +14,13 @@
   </style>
 </head>
 <body>
+<?php
+    $strJsonFileContents = file_get_contents("variables.json");
+    $array = json_decode($strJsonFileContents, true);
+    $phone = $array["phone"];
+    $city = $array["city"];
+    $state = $array["state"];
+?>
   <div class="main">
     <div class="hero">
       <img src="header.jpg" alt="Steve & Steve Pest Control">
@@ -41,16 +48,16 @@
       
       <div class="about">
         <h2>About Us</h2>
-        <p>Steve & Steve Pest Control is a family-owned business based in Everett, WA. We've earned a reputation for fast, reliable, and eco-friendly pest control services. Our trained professionals are licensed, insured, and dedicated to ensuring your space remains pest-free. We understand the disruption pests can cause, and we strive to handle your pest control needs promptly and efficiently.</p>
+        <p>Steve & Steve Pest Control is a family-owned business based in <?php echo $city . ', ' . $state; ?>. We've earned a reputation for fast, reliable, and eco-friendly pest control services. Our trained professionals are licensed, insured, and dedicated to ensuring your space remains pest-free. We understand the disruption pests can cause, and we strive to handle your pest control needs promptly and efficiently.</p>
       </div>
       
       <div class="contact">
         <h2>Contact Us</h2>
         <p>Interested in our services or have a question? Don't hesitate to reach out!</p>
-        <p>Phone: (425) 298-5710</p>
+        <p>Phone: <?php echo $phone; ?></p>
         <p>Email: info@steveandstevepestcontrol.com</p>
         <p>We look forward to keeping your home and business pest-free!</p>
       </div>
     </div>
 </body>
-</html>      
+</html>
